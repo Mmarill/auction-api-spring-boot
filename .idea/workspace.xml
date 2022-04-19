@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75888611-6312-4ad5-8764-95dc688d6d27" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +112,9 @@
       <option name="USE_PATTERN" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="AuctionApiSpringApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="com.example.auctionapispring.AuctionApiSpringApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.example.auctionapispring.AuctionApiSpringApplication" />
       <module name="auction-api-spring" />
       <extension name="coverage">
@@ -128,7 +129,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AuctionApiSpringApplication" />
+        <item itemvalue="Application.com.example.auctionapispring.AuctionApiSpringApplication" />
       </list>
     </recent_temporary>
   </component>
