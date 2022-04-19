@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/auction-api-spring/auction-api-spring.iml" filepath="$PROJECT_DIR$/auction-api-spring/auction-api-spring.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/auction-api-spring-boot.iml" filepath="$PROJECT_DIR$/.idea/auction-api-spring-boot.iml" />
     </modules>
   </component>
 </project>
