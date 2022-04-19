@@ -1,0 +1,77 @@
+package com.example.auctionapispring.bids;
+
+import com.example.auctionapispring.users.User;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.time.LocalDateTime;
+
+@Document(collection="bids")
+public class Bid {
+
+    @Id
+    private String id;  // Ska databas skapa eller ska vi använda typ UUID eller nåt?
+    private LocalDateTime bidTime;
+    private String userId;
+    private String auctionId;
+    private double amount;
+
+    public Bid(String id, LocalDateTime bidTime, String userId, String auctionId, double amount) {
+        this.id = id;
+        this.bidTime = bidTime;
+        this.userId = userId;
+        this.auctionId = auctionId;
+        this.amount = amount;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getBidTime() {
+        return bidTime;
+    }
+
+    public void setBidTime(LocalDateTime bidTime) {
+        this.bidTime = bidTime;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getAuctionId() {
+        return auctionId;
+    }
+
+    public void setAuctionId(String auctionId) {
+        this.auctionId = auctionId;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        return "Bid{" +
+                "id='" + id + '\'' +
+                ", bidTime=" + bidTime +
+                ", userId='" + userId + '\'' +
+                ", auctionId='" + auctionId + '\'' +
+                ", amount=" + amount +
+                '}';
+    }
+}
