@@ -19,7 +19,8 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 public class AuthTokenFilter extends OncePerRequestFilter{
-	 @Autowired
+
+	  @Autowired
 	  private JwtUtils jwtUtils;
 
 	  @Autowired
