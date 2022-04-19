@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75888611-6312-4ad5-8764-95dc688d6d27" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auction-api-spring/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/users/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/users/UserRepository.java" afterDir="false" />
-    </list>
+    <list default="true" id="75888611-6312-4ad5-8764-95dc688d6d27" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
