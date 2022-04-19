@@ -1,4 +1,4 @@
-package com.example.auctionapispring.users;
+package com.example.auctionapispring.controller;
 
 
 import java.util.HashSet;
@@ -37,6 +37,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
+
     @Autowired
     AuthenticationManager authenticationManager;
 
