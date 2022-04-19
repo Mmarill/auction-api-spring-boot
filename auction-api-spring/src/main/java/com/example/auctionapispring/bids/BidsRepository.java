@@ -7,3 +7,4 @@ import java.util.Optional;
 public interface BidsRepository extends MongoRepository {
     Optional<Bid> findById(String id);
 }
+

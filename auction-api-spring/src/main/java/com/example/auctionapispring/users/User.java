@@ -1,21 +1,42 @@
 package com.example.auctionapispring.users;
 
+
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+import com.example.auctionapispring.role.Role;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="users")
+@Document(collection = "users")
 public class User {
 
     @Id
     private String id;
-    private String email;
+
+    @NotBlank
+    @Size(max = 50)
+    @Email
+    private String username;
+
+    @NotBlank
+    @Size(max = 120)
     private String password;
+
+    @DBRef
+    private Set<Role> roles = new HashSet<>();
 
     public User() {
     }
 
-    public User(String email, String password) {
-        this.email = email;
+    public User(String username, String password) {
+
+        this.username = username;
         this.password = password;
     }
 
@@ -27,12 +48,13 @@ public class User {
         this.id = id;
     }
 
-    public String getEmail() {
-        return email;
+
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -43,12 +65,11 @@ public class User {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }
