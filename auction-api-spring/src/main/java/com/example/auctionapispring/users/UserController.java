@@ -20,7 +20,7 @@ public class UserController {
         return userRepository.findAll();
     }
 
-    //
+    //Get user by id, throw exception if not found. Update credentials, save user.
     @PutMapping("/update/{id}")
     public ResponseEntity<?> updateUser(
             @PathVariable String id,
