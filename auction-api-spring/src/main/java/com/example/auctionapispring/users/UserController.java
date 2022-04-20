@@ -1,5 +1,6 @@
 package com.example.auctionapispring.users;
 
+import com.example.auctionapispring.payload.response.MessageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +20,9 @@ public class UserController {
         return userRepository.findAll();
     }
 
+    //
     @PutMapping("/update/{id}")
-    public ResponseEntity<User> updateUser(
+    public ResponseEntity<?> updateUser(
             @PathVariable String id,
             @RequestBody User userDetails) throws ResourceNotFoundException {
         User user = userRepository.findById(id)
@@ -29,6 +31,6 @@ public class UserController {
         user.setUsername(userDetails.getUsername());
         user.setPassword(userDetails.getPassword());
         final User updatedUser = userRepository.save(user);
-        return ResponseEntity.ok(updatedUser);
+        return ResponseEntity.ok(new MessageResponse("User updated successfully! " + updatedUser.getUsername() + " " + updatedUser.getRoles()));
     }
 }
