@@ -4,7 +4,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;
 
-public interface BidsRepository extends MongoRepository {
+public interface BidsRepository extends MongoRepository <Bid, String> {
     Optional<Bid> findById(String id);
 }
 
