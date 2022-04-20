@@ -1,13 +1,21 @@
 package com.example.auctionapispring.bids;
 
-import com.example.auctionapispring.auctions.Auction;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 
-import javax.swing.text.html.Option;
+import java.util.List;
 import java.util.Optional;
 
 public interface BidsRepository extends MongoRepository <Bid, String>{
-    //Optional<Bid> findById(String id);
+    Optional<Bid> findById(String bidId);
+
+    // Gets all bids belonging to a specific user
+    @Query(value = "{'userId':?0}")
+    List<Bid> findByUserId(String userId);
+
+    // Gets all bids belonging to a specific auction
+    @Query(value = "{'auctionId':'?0'}")
+    List<Bid> findByAuctionId(String auctionId);
+
 
 }
-
