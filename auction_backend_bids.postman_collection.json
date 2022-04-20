@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "413f54a3-c22d-4ed0-90a4-5b81b188d2a3",
+		"name": "auction_backend_bids",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create new bid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"bidTime\":1448133213358,\"userId\":\"625e701f3712d9caa15f2634\",\"auctionId\":\"625e70c13712d9caa15f263a\",\"amount\":2500}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "192.168.8.100:8080/api/bids/create/",
+					"host": [
+						"192",
+						"168",
+						"8",
+						"100"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bids",
+						"create",
+						""
+					]
+				},
+				"description": "Creates a Bid in database.\n\n/api/bids/create/  \nMethod: POST\n\nBody: raw, JSON {  \n\"bidTime\":Date.now(), (long)  \n\"userId\":\"String\",  \n\"auctionId\":\"String\",  \n\"amount\":Float  \n}\n\nExample response 200 OK:\n\n{ \"id\": \"6260163578dfac0d4bd00fa4\", \"bidTime\": 1448133213358, \"localBidTime\": **null**, \"userId\": \"625e701f3712d9caa15f2634\", \"auctionId\": \"625e70c13712d9caa15f263a\", \"amount\": 2500.0}"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bid By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "192.168.8.100:8080/api/bids/626006b77f908341b7f1612b",
+					"host": [
+						"192",
+						"168",
+						"8",
+						"100"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bids",
+						"626006b77f908341b7f1612b"
+					]
+				},
+				"description": "192.168.8.100:8080/api/bids/\n\n`Gets a specific Bid By its Id`\n\n`/api/bids/ Method: GET`\n\n`Body: None`\n\n`Example response 200 OK:`\n\n`{`{ \"id\": \"626006b77f908341b7f1612b\", \"bidTime\": 1448130213358, \"localBidTime\": \"2022-04-20T15:12:23.586\", \"userId\": \"625e701f3712d9caa15f2634\", \"auctionId\": \"625e70c13712d9caa15f263a\", \"amount\": 2500.0}"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Bids in Database",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "192.168.8.100:8080/api/bids/all",
+					"host": [
+						"192",
+						"168",
+						"8",
+						"100"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bids",
+						"all"
+					]
+				},
+				"description": "1`92.168.8.100:8080/api/bids/all`\n\n`Gets all Bids in database`\n\n`/api/bids/all Method: GET`\n\n`Body: None`\n\n`Example response 200 OK:`\n\n\\[\n\n{ \"id\": \"625e70e03712d9caa15f263d\", \"bidTime\": 1448130213358, \"localBidTime\": **null**, \"userId\": \"625e701f3712d9caa15f2634\", \"auctionId\": \"625e705e3712d9caa15f2639\", \"amount\": 1200.0 },\n\n{ \"id\": \"625e70eb3712d9caa15f263e\", \"bidTime\": 1648197225793, \"localBidTime\": **null**, \"userId\": \"625e701f3712d9caa15f2634\", \"auctionId\": \"625e705e3712d9caa15f2639\", \"amount\": 0.0 },\n\n{ \"id\": \"626006b77f908341b7f1612b\", \"bidTime\": 1448130213358, \"localBidTime\": \"2022-04-20T15:12:23.586\", \"userId\": \"625e701f3712d9caa15f2634\", \"auctionId\": \"625e70c13712d9caa15f263a\", \"amount\": 2500.0 }\n\n\\]"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Bids By UserId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "192.168.8.100:8080/api/bids/user/625e701f3712d9caa15f2634",
+					"host": [
+						"192",
+						"168",
+						"8",
+						"100"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bids",
+						"user",
+						"625e701f3712d9caa15f2634"
+					]
+				},
+				"description": "`192.168.8.100:8080/api/bids/user/>`\n\n`Gets a specific Bid By its Id`\n\n`/api/bids/user/ Method: GET`\n\n`Body: None`\n\n`Example response 200 OK:`\n\n\\[\n\n{ \"id\": \"625e70e03712d9caa15f263d\", \"bidTime\": 1448130213358, \"localBidTime\": **null**, \"userId\": \"625e701f3712d9caa15f2634\", \"auctionId\": \"625e705e3712d9caa15f2639\", \"amount\": 1200.0 },\n\n{ \"id\": \"625e70eb3712d9caa15f263e\", \"bidTime\": 1648197225793, \"localBidTime\": **null**, \"userId\": \"625e701f3712d9caa15f2634\", \"auctionId\": \"625e705e3712d9caa15f2639\", \"amount\": 0.0 }\n\n\\]"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Bids By AuctionId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "192.168.8.100:8080/api/bids/auction/625e70c13712d9caa15f263a",
+					"host": [
+						"192",
+						"168",
+						"8",
+						"100"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bids",
+						"auction",
+						"625e70c13712d9caa15f263a"
+					]
+				},
+				"description": "1`92.168.8.100:8080/api/bids/auction/`\n\n`Gets all Bids By auctionId`\n\n`/api/bids/auction/ Method: GET`\n\n`Body: None`\n\n`Example response 200 OK:`\n\n\\[\n\n{ \"id\": \"626006b77f908341b7f1612b\", \"bidTime\": 1448130213358, \"localBidTime\": \"2022-04-20T15:12:23.586\", \"userId\": \"625e701f3712d9caa15f2634\", \"auctionId\": \"625e70c13712d9caa15f263a\", \"amount\": 2500.0 },\n\n{ \"id\": \"6260163578dfac0d4bd00fa4\", \"bidTime\": 1448133213358, \"localBidTime\": **null**, \"userId\": \"625e701f3712d9caa15f2634\", \"auctionId\": \"625e70c13712d9caa15f263a\", \"amount\": 2500.0 }\n\n\\]"
+			},
+			"response": []
+		}
+	]
+}
