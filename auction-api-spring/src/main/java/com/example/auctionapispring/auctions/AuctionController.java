@@ -1,10 +1,9 @@
 package com.example.auctionapispring.auctions;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/auction")
@@ -15,5 +14,10 @@ public class AuctionController {
     @PostMapping("/create")
     public Auction createAuction(@RequestBody Auction auction){
         return auctionService.createAuction(auction);
+    }
+
+    @GetMapping("/all")
+    public List<Auction> getAuctions(){
+        return auctionService.getAuctions();
     }
 }

@@ -3,31 +3,37 @@ package com.example.auctionapispring.auctions;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalTime;
+import java.util.Date;
+import java.util.List;
 
-@Document(collection="auction")
+@Document(collection="auctions")
 public class Auction {
     private String id;
-    private String auctionId;
+    private int auctionId;
+    private int userId;
     private String productName;
     private String productInfo;
     private String productImgURL;
-    private int startPrice;
+    private Long startPrice;
     private String endPrice;
-    private LocalTime startTime;
+    private Date endTime;
+    private List<?> bids;
 
     public Auction() {
     }
 
-    public Auction(String id, String auctionId, String productName, String productInfo,
-                   String productImgURL, int startPrice, String endPrice, LocalTime startTime) {
+    public Auction(String id, int auctionId, int userId,String productName, String productInfo,
+                   String productImgURL, Long startPrice, String endPrice, Date endTime, List<?> bids) {
         this.id = id;
         this.auctionId = auctionId;
+        this.userId = userId;
         this.productName = productName;
         this.productInfo = productInfo;
         this.productImgURL = productImgURL;
         this.startPrice = startPrice;
         this.endPrice = endPrice;
-        this.startTime = startTime;
+        this.endTime = endTime;
+        this.bids = bids;
     }
 
     public String getId() {
@@ -38,12 +44,20 @@ public class Auction {
         this.id = id;
     }
 
-    public String getAuctionId() {
+    public int getAuctionId() {
         return auctionId;
     }
 
-    public void setAuctionId(String auctionId) {
+    public void setAuctionId(int auctionId) {
         this.auctionId = auctionId;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getProductName() {
@@ -70,11 +84,11 @@ public class Auction {
         this.productImgURL = productImgURL;
     }
 
-    public int getStartPrice() {
+    public Long getStartPrice() {
         return startPrice;
     }
 
-    public void setStartPrice(int startPrice) {
+    public void setStartPrice(Long startPrice) {
         this.startPrice = startPrice;
     }
 
@@ -86,11 +100,11 @@ public class Auction {
         this.endPrice = endPrice;
     }
 
-    public LocalTime getStartTime() {
-        return startTime;
+    public Date getEndTime() {
+        return endTime;
     }
 
-    public void setStartTime(LocalTime startTime) {
-        this.startTime = startTime;
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
     }
 }
