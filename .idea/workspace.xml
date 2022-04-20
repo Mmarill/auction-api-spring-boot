@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75888611-6312-4ad5-8764-95dc688d6d27" name="Changes" comment="Har fyllat på auction classerna">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_18.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/payload/request/SignupRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/payload/request/SignupRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/payload/response/JwtResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/payload/response/JwtResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/security/services/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/security/services/UserDetailsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/users/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auction-api-spring/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/users/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/users/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/users/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/users/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/users/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/users/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
