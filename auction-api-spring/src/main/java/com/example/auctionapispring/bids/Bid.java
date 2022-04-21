@@ -1,22 +1,21 @@
 package com.example.auctionapispring.bids;
 
-import com.example.auctionapispring.users.User;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Document(collection="bids")
 public class Bid {
 
     @Id
     private String id;  // Ska databas skapa eller ska vi använda typ UUID eller nåt?
-    private LocalDateTime bidTime;
+    private Date bidTime;
     private String userId;
     private String auctionId;
     private double amount;
 
-    public Bid(String id, LocalDateTime bidTime, String userId, String auctionId, double amount) {
+    public Bid(String id, Date bidTime, String userId, String auctionId, double amount) {
         this.id = id;
         this.bidTime = bidTime;
         this.userId = userId;
@@ -32,11 +31,11 @@ public class Bid {
         this.id = id;
     }
 
-    public LocalDateTime getBidTime() {
+    public Date getBidTime() {
         return bidTime;
     }
 
-    public void setBidTime(LocalDateTime bidTime) {
+    public void setBidTime(Date bidTime) {
         this.bidTime = bidTime;
     }
 
