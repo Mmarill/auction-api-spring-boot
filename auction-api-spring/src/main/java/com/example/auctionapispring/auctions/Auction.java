@@ -108,4 +108,12 @@ public class Auction {
     public void setEndTime(Date endTime) {
         this.endTime = endTime;
     }
+
+    public List<?> getBids() {
+        return bids;
+    }
+
+    public void setBids(List<?> bids) {
+        this.bids = bids;
+    }
 }
