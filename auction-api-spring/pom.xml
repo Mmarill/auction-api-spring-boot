@@ -17,6 +17,8 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/com.thetransactioncompany/cors-filter -->
+
 		<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-rest-webmvc -->
 		<dependency>
 			<groupId>org.springframework.data</groupId>
@@ -77,7 +79,6 @@
 			<version>0.9.1</version>
 		</dependency>
     </dependencies>
-
 	<build>
 		<plugins>
 			<plugin>

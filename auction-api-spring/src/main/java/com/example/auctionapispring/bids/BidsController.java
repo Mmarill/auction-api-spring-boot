@@ -8,6 +8,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/bids")
+@CrossOrigin
 public class BidsController {
 
     @Autowired
