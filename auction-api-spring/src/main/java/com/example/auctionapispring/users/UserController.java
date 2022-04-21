@@ -33,4 +33,14 @@ public class UserController {
         final User updatedUser = userRepository.save(user);
         return ResponseEntity.ok(new MessageResponse("User updated successfully! " + updatedUser.getUsername() + " " + updatedUser.getRoles()));
     }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteUser(
+            @PathVariable String id) throws ResourceNotFoundException {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found on : " + id));
+
+        userRepository.delete(user);
+        return ResponseEntity.ok(new MessageResponse("User deleted"));
+    }
 }
