@@ -44,4 +44,12 @@ public class UserController {
         userRepository.delete(user);
         return ResponseEntity.ok(new MessageResponse("User deleted"));
     }
+
+    @GetMapping("/user/{id}")
+    public User getSingleUser(
+            @PathVariable String id) throws ResourceNotFoundException {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found on : " + id));
+        return user;
+    }
 }
