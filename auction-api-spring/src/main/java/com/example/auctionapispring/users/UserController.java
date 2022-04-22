@@ -1,9 +1,12 @@
 package com.example.auctionapispring.users;
 
 import com.example.auctionapispring.payload.response.MessageResponse;
+import com.example.auctionapispring.security.services.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +18,13 @@ public class UserController {
 
     @Autowired
     UserRepository userRepository;
+
+    UserDetailsImpl currentUser(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+       return userDetails;
+    }
+
 
     @GetMapping("/all")
     public List <User> getUsers() {
