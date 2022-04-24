@@ -10,19 +10,22 @@ public class File {
 
     @Id
     private String id;
-    private String fileUrl;
+    private String fileName;
 
-    public File(String id, String photos) {
+    public File() {
+    }
+
+    public File(String id, String fileName) {
         this.id = id;
-        this.fileUrl = photos;
+        this.fileName = fileName;
     }
 
     public String getPhotos() {
-        return fileUrl;
+        return fileName;
     }
 
     public void setPhotos(String photos) {
-        this.fileUrl = photos;
+        this.fileName = photos;
     }
 
     public String getId() {
