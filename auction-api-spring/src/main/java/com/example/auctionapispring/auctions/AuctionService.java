@@ -17,4 +17,6 @@ public class AuctionService {
     public List<Auction> getAuctions() {
         return auctionRepository.findAll();
     }
+
+    public List<Auction> deleteAuction(String id) {return auctionRepository.delete(id);}
 }

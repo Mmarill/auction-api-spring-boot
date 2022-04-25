@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="75888611-6312-4ad5-8764-95dc688d6d27" name="Changes" comment="Har fyllat på auction classerna">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/users/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/users/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/auctions/AuctionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/auctions/AuctionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/auctions/AuctionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/auctions/AuctionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/auctions/AuctionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/auctions/AuctionService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,10 +52,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="auction-api-spring" />
@@ -132,19 +136,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="auction-api-spring" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="auction-api-spring" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.AuctionApiSpringApplication" />
@@ -185,7 +176,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Har fyllat på auction classerna" />
