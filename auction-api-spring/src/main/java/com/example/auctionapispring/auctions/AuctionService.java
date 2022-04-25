@@ -20,7 +20,7 @@ public class AuctionService {
         return auctionRepository.findAll();
     }
 
-    public Optional<Auction> findById(String bidId){
-        return auctionRepository.findById(bidId);
+    public Optional<Auction> findById(String auctionId){
+        return auctionRepository.findById(auctionId);
     }
 }

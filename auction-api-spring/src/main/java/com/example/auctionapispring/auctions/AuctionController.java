@@ -29,7 +29,7 @@ public class AuctionController {
     public Optional<Auction> getBidById(@PathVariable String bidId){
         return auctionService.findById(bidId);
     }
-    
+
 
 
 }
