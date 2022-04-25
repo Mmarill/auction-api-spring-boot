@@ -1,6 +1,8 @@
 package com.example.auctionapispring.auctions;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,4 +23,10 @@ public class AuctionController {
     public List<Auction> getAuctions(){
         return auctionService.getAuctions();
     }
+// under const
+/*    @DeleteMapping("/delete/{id}")
+    public String deleteAuction(@RequestParam String id) {
+         auctionService.delete(id);
+        return "Well done";
+    }*/
 }

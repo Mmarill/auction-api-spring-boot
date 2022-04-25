@@ -5,5 +5,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AuctionRepository extends MongoRepository<Auction, String> {
-
+    // under const
+  //  void deleteById(String id);
 }

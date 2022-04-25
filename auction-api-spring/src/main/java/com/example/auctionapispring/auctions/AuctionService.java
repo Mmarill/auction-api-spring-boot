@@ -17,4 +17,11 @@ public class AuctionService {
     public List<Auction> getAuctions() {
         return auctionRepository.findAll();
     }
+    // under const
+/*    public String delete(String id) {
+
+        auctionRepository.deleteById(id);
+
+        return "isRemoved";
+    }*/
 }
