@@ -1,48 +1,29 @@
 package com.example.auctionapispring.auctions;
 
 import com.example.auctionapispring.bids.Bid;
-<<<<<<< HEAD
-import com.example.auctionapispring.users.User;
-=======
-import org.springframework.data.annotation.Id;
->>>>>>> main
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
+import java.time.LocalTime;
 import java.util.List;
 
 @Document(collection="auctions")
 public class Auction {
     private String id;
-<<<<<<< HEAD
-    private int auctionId;
-=======
->>>>>>> main
     private String userId;
     private String productName;
     private String productInfo;
     private String productImgURL;
     private Long startPrice;
     private String endPrice;
-<<<<<<< HEAD
-    private Date endTime;
-=======
     private LocalTime endTime;
->>>>>>> main
     private List<Bid> bids;
 
     public Auction() {
     }
 
-<<<<<<< HEAD
-    public Auction(String id, int auctionId, String userId, String productName, String productInfo,
-                   String productImgURL, Long startPrice, String endPrice, Date endTime, List<Bid> bids) {
-
-
-=======
     public Auction(String id, String userId,String productName, String productInfo,
                    String productImgURL, Long startPrice, String endPrice, LocalTime endTime, List<Bid> bids) {
->>>>>>> main
+
         this.id = id;
         this.userId = userId;
         this.productName = productName;
@@ -63,13 +44,6 @@ public class Auction {
     }
 
 
-<<<<<<< HEAD
-    public void setAuctionId(int auctionId) {
-        this.auctionId = auctionId;
-    }
-
-=======
->>>>>>> main
     public String getUserId() {
         return userId;
     }

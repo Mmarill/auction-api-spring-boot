@@ -19,18 +19,21 @@ public class AuctionService {
     public List<Auction> getAuctions() {
         return auctionRepository.findAll();
     }
-<<<<<<< HEAD
-    // under const
-/*    public String delete(String id) {
+
+
+    public String deleteById(String id) {
 
         auctionRepository.deleteById(id);
 
-        return "isRemoved";
-    }*/
-=======
-
-    public Optional<Auction> findById(String auctionId){
-        return auctionRepository.findById(auctionId);
+        return "Auction with id: " + id + " has been removed!";
     }
->>>>>>> main
+
+
+    public Optional<Auction> findById(String id){
+        return auctionRepository.findById(id);
+    }
+
+    public Optional<Auction> findByUserId(String userId) {
+        return auctionRepository.findByUserId(userId);
+    }
 }

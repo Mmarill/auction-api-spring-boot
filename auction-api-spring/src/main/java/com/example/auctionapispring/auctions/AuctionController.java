@@ -6,13 +6,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auction")
-@CrossOrigin
 public class AuctionController {
 
     @Autowired
@@ -27,21 +27,21 @@ public class AuctionController {
     public List<Auction> getAuctions(){
         return auctionService.getAuctions();
     }
-<<<<<<< HEAD
-// under const
-/*    @DeleteMapping("/delete/{id}")
-    public String deleteAuction(@RequestParam String id) {
-         auctionService.delete(id);
-        return "Well done";
-    }*/
-=======
 
-    @GetMapping("/{auctionId}")
-    public Optional<Auction> getBidById(@PathVariable String bidId){
-        return auctionService.findById(bidId);
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteAuction(@PathVariable String id) {
+        return auctionService.deleteById(id);
     }
 
 
+    @GetMapping("/{id}")
+    public Optional<Auction> getAuctionById(@PathVariable String id){
+        return auctionService.findById(id);
+    }
 
->>>>>>> main
+    @GetMapping("/user/{userId}")
+    public Optional<Auction> getAuctionByUserId(@PathVariable("userId") String userId){
+        return auctionService.findByUserId(userId);
+    }
 }
