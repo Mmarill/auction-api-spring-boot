@@ -7,7 +7,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/auction")
+@CrossOrigin
 public class AuctionController {
+
     @Autowired
     AuctionService auctionService;
 
@@ -20,4 +22,6 @@ public class AuctionController {
     public List<Auction> getAuctions(){
         return auctionService.getAuctions();
     }
+
+
 }

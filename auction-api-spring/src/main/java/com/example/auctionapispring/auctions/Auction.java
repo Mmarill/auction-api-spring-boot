@@ -10,8 +10,7 @@ import java.util.List;
 @Document(collection="auctions")
 public class Auction {
     private String id;
-    private int auctionId;
-    private int userId;
+    private String userId;
     private String productName;
     private String productInfo;
     private String productImgURL;
@@ -23,10 +22,9 @@ public class Auction {
     public Auction() {
     }
 
-    public Auction(String id, int auctionId, int userId,String productName, String productInfo,
+    public Auction(String id, String userId,String productName, String productInfo,
                    String productImgURL, Long startPrice, String endPrice, Date endTime, List<?> bids) {
         this.id = id;
-        this.auctionId = auctionId;
         this.userId = userId;
         this.productName = productName;
         this.productInfo = productInfo;
@@ -45,19 +43,12 @@ public class Auction {
         this.id = id;
     }
 
-    public int getAuctionId() {
-        return auctionId;
-    }
 
-    public void setAuctionId(int auctionId) {
-        this.auctionId = auctionId;
-    }
-
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
