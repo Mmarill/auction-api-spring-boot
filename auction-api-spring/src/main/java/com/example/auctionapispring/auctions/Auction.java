@@ -1,9 +1,9 @@
 package com.example.auctionapispring.auctions;
 
-import org.springframework.data.annotation.Id;
+import com.example.auctionapispring.bids.Bid;
+import com.example.auctionapispring.users.User;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
 
@@ -11,20 +11,22 @@ import java.util.List;
 public class Auction {
     private String id;
     private int auctionId;
-    private int userId;
+    private String userId;
     private String productName;
     private String productInfo;
     private String productImgURL;
     private Long startPrice;
     private String endPrice;
     private Date endTime;
-    private List<?> bids;
+    private List<Bid> bids;
 
     public Auction() {
     }
 
-    public Auction(String id, int auctionId, int userId,String productName, String productInfo,
-                   String productImgURL, Long startPrice, String endPrice, Date endTime, List<?> bids) {
+    public Auction(String id, int auctionId, String userId, String productName, String productInfo,
+                   String productImgURL, Long startPrice, String endPrice, Date endTime, List<Bid> bids) {
+
+
         this.id = id;
         this.auctionId = auctionId;
         this.userId = userId;
@@ -53,11 +55,11 @@ public class Auction {
         this.auctionId = auctionId;
     }
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -109,11 +111,11 @@ public class Auction {
         this.endTime = endTime;
     }
 
-    public List<?> getBids() {
+    public List<Bid> getBids() {
         return bids;
     }
 
-    public void setBids(List<?> bids) {
+    public void setBids(List<Bid> bids) {
         this.bids = bids;
     }
 }
