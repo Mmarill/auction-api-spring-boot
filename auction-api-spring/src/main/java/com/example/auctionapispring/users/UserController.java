@@ -5,6 +5,7 @@ import com.example.auctionapispring.security.services.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,11 @@ public class UserController {
        return userDetails;
     }
 
+    @GetMapping("/loggedin")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    public User get() {
+        return userRepository.findById(currentUser().getId()).get();
+    }
 
     @GetMapping("/all")
     public List <User> getUsers() {
@@ -41,6 +47,7 @@ public class UserController {
 
         user.setUsername(userDetails.getUsername());
         user.setPassword(userDetails.getPassword());
+        user.setRoles(userDetails.getRoles());
         final User updatedUser = userRepository.save(user);
         return ResponseEntity.ok(new MessageResponse("User updated successfully! " + updatedUser.getUsername() + " " + updatedUser.getRoles()));
     }

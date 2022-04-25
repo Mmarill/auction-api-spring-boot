@@ -9,6 +9,7 @@ import java.util.List;
 @RequestMapping("/api/auction")
 @CrossOrigin
 public class AuctionController {
+
     @Autowired
     AuctionService auctionService;
 
@@ -21,4 +22,6 @@ public class AuctionController {
     public List<Auction> getAuctions(){
         return auctionService.getAuctions();
     }
+
+
 }
