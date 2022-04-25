@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75888611-6312-4ad5-8764-95dc688d6d27" name="Changes" comment="Created class File, FileController, FileService and FileRepository. Still in progress..." />
+    <list default="true" id="75888611-6312-4ad5-8764-95dc688d6d27" name="Changes" comment="Created class File, FileController, FileService and FileRepository. Still in progress...">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/files/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/files/FileService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
