@@ -1,9 +1,8 @@
 package com.example.auctionapispring.auctions;
 
-import com.example.auctionapispring.payload.response.MessageResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.rest.webmvc.ResourceNotFoundException;
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,8 +13,7 @@ import java.util.List;
 public class AuctionController {
     @Autowired
     AuctionService auctionService;
-    @Autowired
-    AuctionRepository auctionRepository;
+
 
     @PostMapping("/create")
     public Auction createAuction(@RequestBody Auction auction){
@@ -31,5 +29,6 @@ public class AuctionController {
     public List <Auction> deleteAuction(@RequestParam String id){
         return auctionService.deleteAuction(id);
     }
-    
+
+
 }
