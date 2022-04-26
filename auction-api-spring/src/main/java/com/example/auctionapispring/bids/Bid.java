@@ -1,6 +1,7 @@
 package com.example.auctionapispring.bids;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
@@ -11,7 +12,9 @@ public class Bid {
     @Id
     private String id;  // Ska databas skapa eller ska vi använda typ UUID eller nåt?
     private Date bidTime;
+    @DBRef
     private String userId;
+    @DBRef
     private String auctionId;
     private double amount;
 

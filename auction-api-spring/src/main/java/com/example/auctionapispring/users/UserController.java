@@ -11,6 +11,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api/users")
@@ -29,7 +30,11 @@ public class UserController {
     @GetMapping("/loggedin")
     @PreAuthorize("hasRole('ROLE_USER')")
     public User get() {
-        return userRepository.findById(currentUser().getId()).get();
+        User user = userRepository.findById(currentUser().getId()).get();
+        user.setPassword("");
+        user.setRoles(null);
+
+        return user;
     }
 
     @GetMapping("/all")
