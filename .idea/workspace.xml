@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75888611-6312-4ad5-8764-95dc688d6d27" name="Changes" comment="Har fyllat på auction classerna" />
+    <list default="true" id="75888611-6312-4ad5-8764-95dc688d6d27" name="Changes" comment="Change in Bid and Controller to get loggedinuser">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/auctions/Auction.java" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/auctions/Auction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/bids/Bid.java" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/bids/Bid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/users/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/users/UserController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -169,7 +174,13 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1650479007999</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="Change in Bid and Controller to get loggedinuser">
+      <created>1650899874383</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1650899874384</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,6 +197,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Har fyllat på auction classerna" />
-    <option name="LAST_COMMIT_MESSAGE" value="Har fyllat på auction classerna" />
+    <MESSAGE value="Change in Bid and Controller to get loggedinuser" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change in Bid and Controller to get loggedinuser" />
   </component>
 </project>
