@@ -1,6 +1,7 @@
 package com.example.auctionapispring.auctions;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalTime;
@@ -17,6 +18,7 @@ public class Auction {
     private Long startPrice;
     private String endPrice;
     private Date endTime;
+    @DBRef
     private List<?> bids;
 
     public Auction() {
