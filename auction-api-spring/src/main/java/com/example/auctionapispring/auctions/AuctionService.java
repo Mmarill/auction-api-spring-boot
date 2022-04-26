@@ -1,5 +1,6 @@
 package com.example.auctionapispring.auctions;
 
+import com.example.auctionapispring.bids.Bid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,7 @@ public class AuctionService {
         return auctionRepository.findAll();
     }
 
+<<<<<<< HEAD
     public List<Auction> deleteAuction (String id) {return auctionRepository.deleteAuction(id);}
     
     public Optional<Auction> findById(String id) {return auctionRepository.findById(id);}
@@ -26,3 +28,22 @@ public class AuctionService {
 
     }
 
+=======
+
+    public String deleteById(String id) {
+
+        auctionRepository.deleteById(id);
+
+        return "Auction with id: " + id + " has been removed!";
+    }
+
+
+    public Optional<Auction> findById(String id){
+        return auctionRepository.findById(id);
+    }
+
+    public Optional<Auction> findByUserId(String userId) {
+        return auctionRepository.findByUserId(userId);
+    }
+}
+>>>>>>> main

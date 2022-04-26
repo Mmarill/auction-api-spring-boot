@@ -1,32 +1,30 @@
 package com.example.auctionapispring.auctions;
 
-import org.springframework.data.annotation.Id;
+import com.example.auctionapispring.bids.Bid;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalTime;
-import java.util.Date;
 import java.util.List;
 
 @Document(collection="auctions")
 public class Auction {
     private String id;
-    private int auctionId;
-    private int userId;
+    private String userId;
     private String productName;
     private String productInfo;
     private String productImgURL;
     private Long startPrice;
     private String endPrice;
-    private Date endTime;
-    private List<?> bids;
+    private LocalTime endTime;
+    private List<Bid> bids;
 
     public Auction() {
     }
 
-    public Auction(String id, int auctionId, int userId,String productName, String productInfo,
-                   String productImgURL, Long startPrice, String endPrice, Date endTime, List<?> bids) {
+    public Auction(String id, String userId,String productName, String productInfo,
+                   String productImgURL, Long startPrice, String endPrice, LocalTime endTime, List<Bid> bids) {
+
         this.id = id;
-        this.auctionId = auctionId;
         this.userId = userId;
         this.productName = productName;
         this.productInfo = productInfo;
@@ -47,19 +45,12 @@ public class Auction {
         this.id = id;
     }
 
-    public int getAuctionId() {
-        return auctionId;
-    }
 
-    public void setAuctionId(int auctionId) {
-        this.auctionId = auctionId;
-    }
-
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -103,19 +94,19 @@ public class Auction {
         this.endPrice = endPrice;
     }
 
-    public Date getEndTime() {
+    public LocalTime getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Date endTime) {
+    public void setEndTime(LocalTime endTime) {
         this.endTime = endTime;
     }
 
-    public List<?> getBids() {
+    public List<Bid> getBids() {
         return bids;
     }
 
-    public void setBids(List<?> bids) {
+    public void setBids(List<Bid> bids) {
         this.bids = bids;
     }
 }

@@ -12,6 +12,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/auction")
 public class AuctionController {
+
     @Autowired
     AuctionService auctionService;
 
@@ -26,6 +27,7 @@ public class AuctionController {
         return auctionService.getAuctions();
     }
 
+<<<<<<< HEAD
     @DeleteMapping("/delete")
     public List<Auction> deleteAuction (@RequestParam String id){
         return auctionService.deleteAuction(id);
@@ -38,3 +40,22 @@ public class AuctionController {
 
 
 }
+=======
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteAuction(@PathVariable String id) {
+        return auctionService.deleteById(id);
+    }
+
+
+    @GetMapping("/{id}")
+    public Optional<Auction> getAuctionById(@PathVariable String id){
+        return auctionService.findById(id);
+    }
+
+    @GetMapping("/user/{userId}")
+    public Optional<Auction> getAuctionByUserId(@PathVariable("userId") String userId){
+        return auctionService.findByUserId(userId);
+    }
+}
+>>>>>>> main

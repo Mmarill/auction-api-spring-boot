@@ -8,6 +8,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/bids")
+@CrossOrigin
 public class BidsController {
 
     @Autowired
@@ -28,14 +29,12 @@ public class BidsController {
     // Gets all bids belonging to a specific user
     @GetMapping("/user/{userId}")
     public List<Bid> getBidsUserId(@PathVariable("userId") String userId){
-        System.out.println("BidsController out <userId>: " + userId);
         return bidsService.getUserBids(userId);
     }
 
     // Gets all bids belonging to a specific auction
     @GetMapping("/auction/{auctionId}")
     public List<Bid> getBidsAuctionId(@PathVariable("auctionId") String auctionId){
-        System.out.println("BidsController out <auctionId>: " + auctionId);
         return bidsService.getAuctionBids(auctionId);
     }
 
