@@ -12,9 +12,7 @@ public class Bid {
     @Id
     private String id;  // Ska databas skapa eller ska vi använda typ UUID eller nåt?
     private Date bidTime;
-    @DBRef
     private String userId;
-    @DBRef
     private String auctionId;
     private double amount;
 
