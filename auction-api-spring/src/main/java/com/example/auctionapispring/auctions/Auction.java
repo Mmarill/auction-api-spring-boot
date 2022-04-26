@@ -37,6 +37,8 @@ public class Auction {
         this.bids = bids;
     }
 
+
+
     public String getId() {
         return id;
     }
