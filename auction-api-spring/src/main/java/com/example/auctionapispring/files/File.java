@@ -1,5 +1,6 @@
 package com.example.auctionapispring.files;
 
+import org.bson.types.Binary;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -8,22 +9,18 @@ public class File {
 
     @Id
     private String id;
-    private String fileName;
+    private String title;
+    private Binary image;
+
 
     public File() {
     }
 
-    public File(String id, String fileName) {
+    public File(String id, String title, Binary image) {
         this.id = id;
-        this.fileName = fileName;
-    }
+        this.title = title;
+        this.image = image;
 
-    public String getPhotos() {
-        return fileName;
-    }
-
-    public void setPhotos(String photos) {
-        this.fileName = photos;
     }
 
     public String getId() {
@@ -32,5 +29,29 @@ public class File {
 
     public void setId(String id) {
         this.id = id;
+    }
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Binary getImage() {
+        return image;
+    }
+
+    public void setImage(Binary image) {
+        this.image = image;
+    }
+
+    @Override
+    public String toString() {
+        return "File{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", image=" + image +
+                '}';
     }
 }
