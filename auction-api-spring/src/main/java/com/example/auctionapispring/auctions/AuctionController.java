@@ -27,20 +27,6 @@ public class AuctionController {
         return auctionService.getAuctions();
     }
 
-<<<<<<< HEAD
-    @DeleteMapping("/delete")
-    public List<Auction> deleteAuction (@RequestParam String id){
-        return auctionService.deleteAuction(id);
-    }
-
-    @GetMapping("/ById/{id}")
-    public Optional<Auction> findById (@RequestParam String id){
-        return auctionService.findById(id);
-    }
-
-
-}
-=======
 
     @DeleteMapping("/delete/{id}")
     public String deleteAuction(@PathVariable String id) {
@@ -58,4 +44,4 @@ public class AuctionController {
         return auctionService.findByUserId(userId);
     }
 }
->>>>>>> main
+

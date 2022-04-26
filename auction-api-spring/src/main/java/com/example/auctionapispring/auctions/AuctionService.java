@@ -20,15 +20,6 @@ public class AuctionService {
         return auctionRepository.findAll();
     }
 
-<<<<<<< HEAD
-    public List<Auction> deleteAuction (String id) {return auctionRepository.deleteAuction(id);}
-    
-    public Optional<Auction> findById(String id) {return auctionRepository.findById(id);}
-
-
-    }
-
-=======
 
     public String deleteById(String id) {
 
@@ -46,4 +37,3 @@ public class AuctionService {
         return auctionRepository.findByUserId(userId);
     }
 }
->>>>>>> main
