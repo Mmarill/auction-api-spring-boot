@@ -10,10 +10,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 /*
  * This class will send a message if file size is bigger than what we limit it for.
- *
- * Where to limit: application.properties as following:
- * spring.servlet.multipart.max-file-size=500KB
- * spring.servlet.multipart.max-request-size=500KB
+ * Its not active.
  *
  * In this case we are limit it to 500KB.
  * */

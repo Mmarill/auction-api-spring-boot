@@ -19,6 +19,7 @@ public class FileController {
     @Autowired
     FileService fileService;
 
+    // Upload image
     @RequestMapping(method = RequestMethod.POST, value = "/upload")
     public String addPhoto(@RequestParam("title") String title,
                            @RequestParam("productImgURL") MultipartFile image, Model model)
@@ -34,6 +35,7 @@ public class FileController {
         return  fileService.loadAll();
     }
 
+    //Get image by id
     @GetMapping("/image/{id}")
     @ResponseBody
     public ResponseEntity<byte[]> getImage(@PathVariable String id) throws IOException{
@@ -42,15 +44,9 @@ public class FileController {
         return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imageFile.getImage().getData());
     }
 
+    // Delete image by id
     @DeleteMapping("/delete/{id}")
     public String deleteImage(@PathVariable String id){
         return fileService.deleteImageById(id);
     }
 }
-
-
-//    @GetMapping("/{id}")
-//    @ResponseBody
-//    public File getImageByID(@PathVariable String id) {
-//        return fileService.getImageById(id);
-//    }

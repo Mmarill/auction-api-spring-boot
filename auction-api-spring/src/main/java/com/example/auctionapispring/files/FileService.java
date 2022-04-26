@@ -17,13 +17,6 @@ public class FileService {
     @Autowired
     FileRepository fileRepository;
 
-    /*
-    * public String addPhoto(String title, MultipartFile file) throws IOException {
-        Photo photo = new Photo(title);
-        photo.setImage(
-          new Binary(BsonBinarySubType.BINARY, file.getBytes()));
-        photo = photoRepo.insert(photo); return photo.getId();
-    }*/
 
     public String addPhoto(String title, MultipartFile file) throws IOException{
         File photo = new File();
