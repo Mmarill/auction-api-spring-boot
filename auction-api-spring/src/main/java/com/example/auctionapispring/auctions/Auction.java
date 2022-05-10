@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -15,16 +16,16 @@ public class Auction {
     private String productName;
     private String productInfo;
     private String productImgURL;
-    private Long startPrice;
-    private String endPrice;
-    private LocalTime endTime;
+    private int startPrice;
+    private int endPrice;
+    private LocalDateTime endTime;
     private List<Bid> bids;
 
     public Auction() {
     }
 
     public Auction(String id, String userId,String productName, String productInfo,
-                   String productImgURL, Long startPrice, String endPrice, LocalTime endTime, List<Bid> bids) {
+                   String productImgURL, int startPrice, int endPrice, LocalDateTime endTime, List<Bid> bids) {
 
         this.id = id;
         this.userId = userId;
@@ -78,27 +79,27 @@ public class Auction {
         this.productImgURL = productImgURL;
     }
 
-    public Long getStartPrice() {
+    public int getStartPrice() {
         return startPrice;
     }
 
-    public void setStartPrice(Long startPrice) {
+    public void setStartPrice(int startPrice) {
         this.startPrice = startPrice;
     }
 
-    public String getEndPrice() {
+    public int getEndPrice() {
         return endPrice;
     }
 
-    public void setEndPrice(String endPrice) {
+    public void setEndPrice(int endPrice) {
         this.endPrice = endPrice;
     }
 
-    public LocalTime getEndTime() {
+    public LocalDateTime getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(LocalTime endTime) {
+    public void setEndTime(LocalDateTime endTime) {
         this.endTime = endTime;
     }
 
