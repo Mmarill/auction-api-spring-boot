@@ -19,6 +19,7 @@ public class AuctionController {
 
     @PostMapping("/create")
     public Auction createAuction(@RequestBody Auction auction){
+        auction.setEndTime(LocalDateTime.now().plusDays(5));
         return auctionService.createAuction(auction);
     }
 

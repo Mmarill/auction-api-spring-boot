@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75888611-6312-4ad5-8764-95dc688d6d27" name="Changes" comment="Created class File, FileController, FileService and FileRepository. Still in progress...">
+    <list default="true" id="75888611-6312-4ad5-8764-95dc688d6d27" name="Changes" comment="Updates in Auction">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/auctions/Auction.java" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/auctions/Auction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/auctions/AuctionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auction-api-spring/src/main/java/com/example/auctionapispring/auctions/AuctionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,7 +178,13 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1650899874384</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="Updates in Auction">
+      <created>1652216091715</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1652216091715</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,6 +202,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Har fyllat på auction classerna" />
     <MESSAGE value="Change in Bid and Controller to get loggedinuser" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change in Bid and Controller to get loggedinuser" />
+    <MESSAGE value="Updates in Auction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates in Auction" />
   </component>
 </project>
