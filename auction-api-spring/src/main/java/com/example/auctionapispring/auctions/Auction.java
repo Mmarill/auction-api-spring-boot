@@ -1,11 +1,6 @@
 package com.example.auctionapispring.auctions;
-
-import com.example.auctionapispring.bids.Bid;
 import org.springframework.data.mongodb.core.mapping.Document;
-
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Set;
 
 @Document(collection="auctions")
 public class Auction {

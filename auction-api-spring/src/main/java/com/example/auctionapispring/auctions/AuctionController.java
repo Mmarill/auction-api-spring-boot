@@ -1,12 +1,7 @@
 package com.example.auctionapispring.auctions;
 
-
-import com.example.auctionapispring.bids.Bid;
 import com.example.auctionapispring.bids.BidsRepository;
-import com.example.auctionapispring.bids.BidsService;
-import com.example.auctionapispring.payload.response.MessageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -21,9 +16,6 @@ public class AuctionController {
     @Autowired
     AuctionService auctionService;
 
-    @Autowired
-    BidsRepository bidRepo;
-
     @PostMapping("/create")
     public Auction createAuction(@RequestBody Auction auction) {
         auction.setEndTime(LocalDateTime.now().plusDays(5));
@@ -35,12 +27,10 @@ public class AuctionController {
         return auctionService.getAuctions();
     }
 
-
     @DeleteMapping("/delete/{id}")
     public String deleteAuction(@PathVariable String id) {
         return auctionService.deleteById(id);
     }
-
 
     @GetMapping("/{id}")
     public Optional<Auction> getAuctionById(@PathVariable String id) {
