@@ -18,9 +18,8 @@ public class FileService {
     FileRepository fileRepository;
 
 
-    public String addPhoto(String title, MultipartFile file) throws IOException{
+    public String addPhoto(MultipartFile file) throws IOException{
         File photo = new File();
-        photo.setTitle(title);
         photo.setImage(
                 new Binary(BsonBinarySubType.BINARY, file.getBytes()));
                 photo = fileRepository.insert(photo); return photo.getId();

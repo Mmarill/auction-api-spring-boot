@@ -21,10 +21,10 @@ public class FileController {
 
     // Upload image
     @RequestMapping(method = RequestMethod.POST, value = "/upload")
-    public String addPhoto(@RequestParam("title") String title,
+    public String addPhoto(
                            @RequestParam("productImgURL") MultipartFile image, Model model)
             throws IOException {
-        String id = fileService.addPhoto(title, image);
+        String id = fileService.addPhoto(image);
         System.out.println(id.getClass().getSimpleName());
         return "redirect:/photos/" + id;
     }

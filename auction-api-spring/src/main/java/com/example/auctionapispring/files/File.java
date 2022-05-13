@@ -2,6 +2,7 @@ package com.example.auctionapispring.files;
 
 import org.bson.types.Binary;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection="images")
@@ -9,17 +10,17 @@ public class File {
 
     @Id
     private String id;
-    private String title;
     private Binary image;
-
+    @DBRef
+    private String auctionId;
 
     public File() {
     }
 
-    public File(String id, String title, Binary image) {
+    public File(String id, Binary image, String auctionId) {
         this.id = id;
-        this.title = title;
         this.image = image;
+        this.auctionId = auctionId;
 
     }
 
@@ -30,13 +31,6 @@ public class File {
     public void setId(String id) {
         this.id = id;
     }
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public Binary getImage() {
         return image;
@@ -46,12 +40,20 @@ public class File {
         this.image = image;
     }
 
+    public String getAuctionId() {
+        return auctionId;
+    }
+
+    public void setAuctionId(String auctionId) {
+        this.auctionId = auctionId;
+    }
+
     @Override
     public String toString() {
         return "File{" +
                 "id='" + id + '\'' +
-                ", title='" + title + '\'' +
                 ", image=" + image +
+                ", auctionId='" + auctionId + '\'' +
                 '}';
     }
 }
