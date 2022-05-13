@@ -1,11 +1,15 @@
 package com.example.auctionapispring.auctions;
 
 
+import com.example.auctionapispring.bids.Bid;
+import com.example.auctionapispring.bids.BidsRepository;
+import com.example.auctionapispring.bids.BidsService;
+import com.example.auctionapispring.payload.response.MessageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,14 +21,17 @@ public class AuctionController {
     @Autowired
     AuctionService auctionService;
 
+    @Autowired
+    BidsRepository bidRepo;
+
     @PostMapping("/create")
-    public Auction createAuction(@RequestBody Auction auction){
+    public Auction createAuction(@RequestBody Auction auction) {
         auction.setEndTime(LocalDateTime.now().plusDays(5));
         return auctionService.createAuction(auction);
     }
 
     @GetMapping("/all")
-    public List<Auction> getAuctions(){
+    public List<Auction> getAuctions() {
         return auctionService.getAuctions();
     }
 
@@ -36,12 +43,13 @@ public class AuctionController {
 
 
     @GetMapping("/{id}")
-    public Optional<Auction> getAuctionById(@PathVariable String id){
+    public Optional<Auction> getAuctionById(@PathVariable String id) {
         return auctionService.findById(id);
     }
 
     @GetMapping("/user/{userId}")
-    public Optional<Auction> getAuctionByUserId(@PathVariable("userId") String userId){
+    public Optional<Auction> getAuctionByUserId(@PathVariable("userId") String userId) {
         return auctionService.findByUserId(userId);
+
     }
 }

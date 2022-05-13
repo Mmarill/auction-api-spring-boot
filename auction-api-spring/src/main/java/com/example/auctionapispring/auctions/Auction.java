@@ -5,9 +5,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 @Document(collection="auctions")
 public class Auction {
+
     private String id;
     private String userId;
     private String productName;
@@ -16,13 +18,13 @@ public class Auction {
     private int startPrice;
     private int endPrice;
     private LocalDateTime endTime;
-    private List<Bid> bids;
+    private String bidId;
 
     public Auction() {
     }
 
     public Auction(String id, String userId,String productName, String productInfo,
-                   String productImgURL, int startPrice, int endPrice, LocalDateTime endTime, List<Bid> bids) {
+                   String productImgURL, int startPrice, int endPrice, LocalDateTime endTime, String bidId) {
 
         this.id = id;
         this.userId = userId;
@@ -32,7 +34,7 @@ public class Auction {
         this.startPrice = startPrice;
         this.endPrice = endPrice;
         this.endTime = endTime;
-        this.bids = bids;
+        this.bidId = bidId;
     }
 
     public String getId() {
@@ -100,11 +102,26 @@ public class Auction {
         this.endTime = endTime;
     }
 
-    public List<Bid> getBids() {
-        return bids;
+    public String getBids() {
+        return bidId;
     }
 
-    public void setBids(List<Bid> bids) {
-        this.bids = bids;
+    public void setBids(String bids) {
+        this.bidId = bidId;
+    }
+
+    @Override
+    public String toString() {
+        return "Auction{" +
+                "id='" + id + '\'' +
+                ", userId='" + userId + '\'' +
+                ", productName='" + productName + '\'' +
+                ", productInfo='" + productInfo + '\'' +
+                ", productImgURL='" + productImgURL + '\'' +
+                ", startPrice=" + startPrice +
+                ", endPrice=" + endPrice +
+                ", endTime=" + endTime +
+                ", bidId=" + bidId +
+                '}';
     }
 }
