@@ -4,7 +4,6 @@ package com.example.auctionapispring.users;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -12,7 +11,6 @@ import com.example.auctionapispring.role.Role;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "users")
 public class User {
@@ -22,7 +20,6 @@ public class User {
 
     @NotBlank
     @Size(max = 50)
-    //@Field(name="email")
     private String username;
 
     @NotBlank

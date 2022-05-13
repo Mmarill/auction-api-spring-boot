@@ -1,8 +1,11 @@
 package com.example.auctionapispring.bids;
 
+import com.example.auctionapispring.auctions.Auction;
+import com.example.auctionapispring.auctions.AuctionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,6 +16,9 @@ public class BidsController {
 
     @Autowired
     BidsService bidsService;
+
+    @Autowired
+    AuctionService auctionService;
 
     // Gets all bids in database (For test cases only)
     @GetMapping("/all")
@@ -41,6 +47,7 @@ public class BidsController {
     // Create a new bid and save it to database
     @PostMapping("/create")
     public Bid createBid(@RequestBody Bid bid){
+        bid.setBidTime(LocalDateTime.now());
         return bidsService.createBid(bid);
     }
 

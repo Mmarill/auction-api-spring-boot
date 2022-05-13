@@ -1,27 +1,45 @@
 package com.example.auctionapispring.auctions;
 
+import com.example.auctionapispring.bids.BidsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auction")
-@CrossOrigin
 public class AuctionController {
 
     @Autowired
     AuctionService auctionService;
 
     @PostMapping("/create")
-    public Auction createAuction(@RequestBody Auction auction){
+    public Auction createAuction(@RequestBody Auction auction) {
+        auction.setEndTime(LocalDateTime.now().plusDays(5));
         return auctionService.createAuction(auction);
     }
 
     @GetMapping("/all")
-    public List<Auction> getAuctions(){
+    public List<Auction> getAuctions() {
         return auctionService.getAuctions();
     }
 
+    @DeleteMapping("/delete/{id}")
+    public String deleteAuction(@PathVariable String id) {
+        return auctionService.deleteById(id);
+    }
 
+    @GetMapping("/{id}")
+    public Optional<Auction> getAuctionById(@PathVariable String id) {
+        return auctionService.findById(id);
+    }
+
+    @GetMapping("/user/{userId}")
+    public Optional<Auction> getAuctionByUserId(@PathVariable("userId") String userId) {
+        return auctionService.findByUserId(userId);
+
+    }
 }

@@ -1,31 +1,26 @@
 package com.example.auctionapispring.auctions;
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.time.LocalTime;
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDateTime;
 
 @Document(collection="auctions")
 public class Auction {
+
     private String id;
     private String userId;
     private String productName;
     private String productInfo;
     private String productImgURL;
-    private Long startPrice;
-    private String endPrice;
-    private Date endTime;
-    @DBRef
-    private List<?> bids;
+    private int startPrice;
+    private int endPrice;
+    private LocalDateTime endTime;
+    private String bidId;
 
     public Auction() {
     }
 
     public Auction(String id, String userId,String productName, String productInfo,
-                   String productImgURL, Long startPrice, String endPrice, Date endTime, List<?> bids) {
+                   String productImgURL, int startPrice, int endPrice, LocalDateTime endTime, String bidId) {
+
         this.id = id;
         this.userId = userId;
         this.productName = productName;
@@ -34,7 +29,7 @@ public class Auction {
         this.startPrice = startPrice;
         this.endPrice = endPrice;
         this.endTime = endTime;
-        this.bids = bids;
+        this.bidId = bidId;
     }
 
     public String getId() {
@@ -78,27 +73,50 @@ public class Auction {
         this.productImgURL = productImgURL;
     }
 
-    public Long getStartPrice() {
+    public int getStartPrice() {
         return startPrice;
     }
 
-    public void setStartPrice(Long startPrice) {
+    public void setStartPrice(int startPrice) {
         this.startPrice = startPrice;
     }
 
-    public String getEndPrice() {
+    public int getEndPrice() {
         return endPrice;
     }
 
-    public void setEndPrice(String endPrice) {
+    public void setEndPrice(int endPrice) {
         this.endPrice = endPrice;
     }
 
-    public Date getEndTime() {
+    public LocalDateTime getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Date endTime) {
+    public void setEndTime(LocalDateTime endTime) {
         this.endTime = endTime;
+    }
+
+    public String getBids() {
+        return bidId;
+    }
+
+    public void setBids(String bids) {
+        this.bidId = bidId;
+    }
+
+    @Override
+    public String toString() {
+        return "Auction{" +
+                "id='" + id + '\'' +
+                ", userId='" + userId + '\'' +
+                ", productName='" + productName + '\'' +
+                ", productInfo='" + productInfo + '\'' +
+                ", productImgURL='" + productImgURL + '\'' +
+                ", startPrice=" + startPrice +
+                ", endPrice=" + endPrice +
+                ", endTime=" + endTime +
+                ", bidId=" + bidId +
+                '}';
     }
 }
