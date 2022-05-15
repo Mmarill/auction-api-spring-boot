@@ -13,13 +13,13 @@ public class Auction {
     private int startPrice;
     private int endPrice;
     private LocalDateTime endTime;
-    private String bidId;
+    // private String bidId;
 
     public Auction() {
     }
 
     public Auction(String id, String userId,String productName, String productInfo,
-                   String productImgURL, int startPrice, int endPrice, LocalDateTime endTime, String bidId) {
+                   String productImgURL, int startPrice, int endPrice, LocalDateTime endTime) {
 
         this.id = id;
         this.userId = userId;
@@ -29,7 +29,7 @@ public class Auction {
         this.startPrice = startPrice;
         this.endPrice = endPrice;
         this.endTime = endTime;
-        this.bidId = bidId;
+        // this.bidId = bidId;
     }
 
     public String getId() {
@@ -97,6 +97,7 @@ public class Auction {
         this.endTime = endTime;
     }
 
+    /*
     public String getBids() {
         return bidId;
     }
@@ -104,6 +105,8 @@ public class Auction {
     public void setBids(String bids) {
         this.bidId = bidId;
     }
+    */
+
 
     @Override
     public String toString() {
@@ -116,7 +119,6 @@ public class Auction {
                 ", startPrice=" + startPrice +
                 ", endPrice=" + endPrice +
                 ", endTime=" + endTime +
-                ", bidId=" + bidId +
                 '}';
     }
 }
