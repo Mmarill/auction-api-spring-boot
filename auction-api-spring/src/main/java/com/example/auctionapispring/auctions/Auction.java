@@ -1,6 +1,9 @@
 package com.example.auctionapispring.auctions;
+import com.example.auctionapispring.bids.Bid;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
+import java.util.Collection;
+import java.util.List;
 
 @Document(collection="auctions")
 public class Auction {
@@ -13,7 +16,19 @@ public class Auction {
     private int startPrice;
     private int endPrice;
     private LocalDateTime endTime;
+
+    private List<Bid> bids;
+
+    public List<Bid> getBids() {
+        return bids;
+    }
+
+    public void addBid(Bid bid) {
+        this.bids.add(bid) ;
+    }
     // private String bidId;
+
+
 
     public Auction() {
     }
@@ -29,6 +44,7 @@ public class Auction {
         this.startPrice = startPrice;
         this.endPrice = endPrice;
         this.endTime = endTime;
+
         // this.bidId = bidId;
     }
 
