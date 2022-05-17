@@ -22,7 +22,8 @@ public class FileService {
         File photo = new File();
         photo.setImage(
                 new Binary(BsonBinarySubType.BINARY, file.getBytes()));
-                photo = fileRepository.insert(photo); return photo.getId();
+                photo = fileRepository.insert(photo);
+                return photo.getId();
     }
 
     public List<File> loadAll(){

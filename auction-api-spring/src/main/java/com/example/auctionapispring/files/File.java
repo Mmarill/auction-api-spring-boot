@@ -11,7 +11,6 @@ public class File {
     @Id
     private String id;
     private Binary image;
-    @DBRef
     private String auctionId;
 
     public File() {
@@ -21,7 +20,6 @@ public class File {
         this.id = id;
         this.image = image;
         this.auctionId = auctionId;
-
     }
 
     public String getId() {

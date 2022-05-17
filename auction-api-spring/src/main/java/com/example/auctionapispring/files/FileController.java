@@ -1,6 +1,9 @@
 package com.example.auctionapispring.files;
 
 
+import com.example.auctionapispring.auctions.Auction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +15,7 @@ import java.io.IOException;
 import java.util.Base64;
 import java.util.List;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/images")
 public class FileController {
@@ -20,12 +24,11 @@ public class FileController {
     FileService fileService;
 
     // Upload image
-    @PostMapping("/upload")
-    public String addPhoto(
-                           @RequestParam("productImgURL") MultipartFile image, Model model)
+    @PostMapping(value="/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public String addPhoto(@RequestParam("file") MultipartFile image, Model model)
             throws IOException {
         String id = fileService.addPhoto(image);
-        return "redirect:/photos/" + id;
+        return id;
     }
 
     // Get all images
