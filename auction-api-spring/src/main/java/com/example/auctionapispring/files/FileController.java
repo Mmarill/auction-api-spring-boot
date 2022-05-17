@@ -20,12 +20,11 @@ public class FileController {
     FileService fileService;
 
     // Upload image
-    @RequestMapping(method = RequestMethod.POST, value = "/upload")
+    @PostMapping("/upload")
     public String addPhoto(
                            @RequestParam("productImgURL") MultipartFile image, Model model)
             throws IOException {
         String id = fileService.addPhoto(image);
-        System.out.println(id.getClass().getSimpleName());
         return "redirect:/photos/" + id;
     }
 
@@ -40,7 +39,6 @@ public class FileController {
     @ResponseBody
     public ResponseEntity<byte[]> getImage(@PathVariable String id) throws IOException{
         File imageFile = fileService.getImageById(id);
-        System.out.println(imageFile);
         return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imageFile.getImage().getData());
     }
 

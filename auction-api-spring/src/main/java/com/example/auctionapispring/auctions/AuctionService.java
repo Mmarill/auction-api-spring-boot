@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @Service
 public class AuctionService {
+
     @Autowired
     AuctionRepository auctionRepository;
     @Autowired
@@ -23,11 +24,8 @@ public class AuctionService {
         return auctionRepository.findAll();
     }
 
-
     public String deleteById(String id) {
-
         auctionRepository.deleteById(id);
-
         return "Auction with id: " + id + " has been removed!";
     }
 

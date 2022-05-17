@@ -15,7 +15,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
  * In this case we are limit it to 500KB.
  * */
 @ControllerAdvice
-public class FileUploadExceptionalAdvise  extends ResponseEntityExceptionHandler {
+public class FileUploadExceptionalAdvise extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(MaxUploadSizeExceededException.class)
     public ResponseEntity<MessageResponse> handleMaxSizeException(MaxUploadSizeExceededException exc){

@@ -40,6 +40,5 @@ public class AuctionController {
     @GetMapping("/user/{userId}")
     public Optional<Auction> getAuctionByUserId(@PathVariable("userId") String userId) {
         return auctionService.findByUserId(userId);
-
     }
 }

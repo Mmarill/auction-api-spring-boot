@@ -53,7 +53,6 @@ public class UserDetailsImpl implements UserDetails {
 		return id;
 	}
 
-
 	@Override
 	public String getPassword() {
 		return password;
