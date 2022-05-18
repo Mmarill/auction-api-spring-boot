@@ -19,13 +19,11 @@ public class AuctionService {
     @Autowired
     BidsRepository bidRepo;
 
-//    public Binary addPhoto(MultipartFile file) throws IOException {
-//        Auction photo = new Auction();
-//        photo.setProductImgURL(
-//                new Binary(BsonBinarySubType.BINARY, file.getBytes()));
-//        photo = auctionRepository.insert(photo);
-//        return photo;
-//    }
+    public Binary addPhoto(MultipartFile file) throws IOException {
+        Auction photo = new Auction();
+        Binary image = new Binary(BsonBinarySubType.BINARY, file.getBytes());
+        return image;
+    }
 
     public Auction createAuction(Auction auction) {
         return auctionRepository.save(auction);

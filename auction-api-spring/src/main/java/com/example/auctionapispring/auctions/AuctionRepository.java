@@ -1,6 +1,5 @@
 package com.example.auctionapispring.auctions;
 
-import com.example.auctionapispring.files.File;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;

@@ -1,8 +1,5 @@
 package com.example.auctionapispring.auctions;
 
-import com.example.auctionapispring.files.FileService;
-import org.bson.BsonBinarySubType;
-import org.bson.types.Binary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -21,24 +18,12 @@ public class AuctionController {
     @Autowired
     AuctionService auctionService;
 
-    @Autowired
-    FileService fileService;
-
     @PostMapping(value="/create", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public Auction createAuction(@RequestPart("file") MultipartFile image, @RequestPart("auction") Auction auction) throws IOException {
         auction.setEndTime(LocalDateTime.now().plusDays(5));
-        auction.setProductImgURL(fileService.addPhoto(image));
+        auction.setProductImgURL(auctionService.addPhoto(image));
         return auctionService.createAuction(auction);
     }
-
-//    @PostMapping(value="/create", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-//    public String createAuction(@RequestPart("photo") MultipartFile image, @RequestPart("auction") Auction auction)
-//            throws IOException {
-//        auction.setProductInfo();
-//        auctionService.addPhoto(image);
-//
-//        return id;
-//    }
 
     @GetMapping("/all")
     public List<Auction> getAuctions() {
