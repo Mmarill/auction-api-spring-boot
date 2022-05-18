@@ -26,15 +26,15 @@ public class UserController {
        return userDetails;
     }
 
-    @GetMapping("/loggedin")
-    @PreAuthorize("hasRole('ROLE_USER')")
-    public User get() {
-        User user = userRepository.findById(currentUser().getId()).get();
-        user.setPassword("");
-        user.setRoles(null);
-
-        return user;
-    }
+//    @GetMapping("/loggedin")
+//    @PreAuthorize("hasRole('ROLE_USER')")
+//    public User get() {
+//        User user = userRepository.findById(currentUser().getId()).get();
+//        user.setPassword("");
+//        user.setRoles(null);
+//
+//        return user;
+//    }
 
     @GetMapping("/all")
     public List <User> getUsers() {

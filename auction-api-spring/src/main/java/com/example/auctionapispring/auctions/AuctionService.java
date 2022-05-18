@@ -1,10 +1,13 @@
 package com.example.auctionapispring.auctions;
 
-import com.example.auctionapispring.bids.Bid;
 import com.example.auctionapispring.bids.BidsRepository;
+import org.bson.BsonBinarySubType;
+import org.bson.types.Binary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,7 +19,15 @@ public class AuctionService {
     @Autowired
     BidsRepository bidRepo;
 
-    public Auction createAuction(Auction auction){
+//    public Binary addPhoto(MultipartFile file) throws IOException {
+//        Auction photo = new Auction();
+//        photo.setProductImgURL(
+//                new Binary(BsonBinarySubType.BINARY, file.getBytes()));
+//        photo = auctionRepository.insert(photo);
+//        return photo;
+//    }
+
+    public Auction createAuction(Auction auction) {
         return auctionRepository.save(auction);
     }
 

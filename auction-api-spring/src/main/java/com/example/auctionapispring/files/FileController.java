@@ -1,9 +1,7 @@
 package com.example.auctionapispring.files;
 
 
-import com.example.auctionapispring.auctions.Auction;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.bson.types.Binary;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.Base64;
 import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -25,9 +22,9 @@ public class FileController {
 
     // Upload image
     @PostMapping(value="/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public String addPhoto(@RequestParam("file") MultipartFile image, Model model)
+    public Binary addPhoto(@RequestParam("file") MultipartFile image, Model model)
             throws IOException {
-        String id = fileService.addPhoto(image);
+        Binary id = fileService.addPhoto(image);
         return id;
     }
 

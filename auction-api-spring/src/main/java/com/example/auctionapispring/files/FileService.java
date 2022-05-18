@@ -18,12 +18,11 @@ public class FileService {
     FileRepository fileRepository;
 
 
-    public String addPhoto(MultipartFile file) throws IOException{
+    public Binary addPhoto(MultipartFile file) throws IOException{
         File photo = new File();
-        photo.setImage(
-                new Binary(BsonBinarySubType.BINARY, file.getBytes()));
-                photo = fileRepository.insert(photo);
-                return photo.getId();
+        Binary image =  new Binary(BsonBinarySubType.BINARY, file.getBytes());
+        photo.setImage(image);
+                return image;
     }
 
     public List<File> loadAll(){
