@@ -1,15 +1,18 @@
 package com.example.auctionapispring.auctions;
+import org.bson.types.Binary;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
 
 @Document(collection="auctions")
 public class Auction {
 
+    @Id
     private String id;
     private String userId;
     private String productName;
     private String productInfo;
-    private String productImgURL;
+    private Binary productImgURL;
     private int startPrice;
     private int endPrice;
     private LocalDateTime endTime;
@@ -18,7 +21,7 @@ public class Auction {
     }
 
     public Auction(String id, String userId,String productName, String productInfo,
-                   String productImgURL, int startPrice, int endPrice, LocalDateTime endTime) {
+                   Binary productImgURL, int startPrice, int endPrice, LocalDateTime endTime) {
 
         this.id = id;
         this.userId = userId;
@@ -63,11 +66,11 @@ public class Auction {
         this.productInfo = productInfo;
     }
 
-    public String getProductImgURL() {
+    public Binary getProductImgURL() {
         return productImgURL;
     }
 
-    public void setProductImgURL(String productImgURL) {
+    public void setProductImgURL(Binary productImgURL) {
         this.productImgURL = productImgURL;
     }
 
