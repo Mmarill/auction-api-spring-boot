@@ -1,7 +1,9 @@
 package com.example.auctionapispring.auctions;
 
+import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -19,9 +21,11 @@ public class AuctionController {
     AuctionService auctionService;
 
     @PostMapping(value="/create", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public Auction createAuction(@RequestPart("file") MultipartFile image, @RequestPart("auction") Auction auction) throws IOException {
+    public Auction createAuction(@RequestPart("file") MultipartFile image, @RequestPart("auction") Auction auction, Model model) throws IOException {
         auction.setEndTime(LocalDateTime.now().plusDays(5));
-        auction.setProductImgURL(auctionService.addPhoto(image));
+        byte[] photo = Base64.encodeBase64(image.getBytes());
+        String pic = new String(photo);
+        auction.setProductImgURL("data:image/png;base64," + pic);
         return auctionService.createAuction(auction);
     }
 

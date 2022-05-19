@@ -12,7 +12,7 @@ public class Auction {
     private String userId;
     private String productName;
     private String productInfo;
-    private Binary productImgURL;
+    private String productImgURL;
     private int startPrice;
     private int endPrice;
     private LocalDateTime endTime;
@@ -21,7 +21,7 @@ public class Auction {
     }
 
     public Auction(String id, String userId,String productName, String productInfo,
-                   Binary productImgURL, int startPrice, int endPrice, LocalDateTime endTime) {
+                   String productImgURL, int startPrice, int endPrice, LocalDateTime endTime) {
 
         this.id = id;
         this.userId = userId;
@@ -66,11 +66,11 @@ public class Auction {
         this.productInfo = productInfo;
     }
 
-    public Binary getProductImgURL() {
+    public String getProductImgURL() {
         return productImgURL;
     }
 
-    public void setProductImgURL(Binary productImgURL) {
+    public void setProductImgURL(String productImgURL) {
         this.productImgURL = productImgURL;
     }
 
